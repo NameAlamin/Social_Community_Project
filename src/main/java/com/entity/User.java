@@ -21,4 +21,12 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id",referencedColumnName = "id")
+    private Location location;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "attachment_id",referencedColumnName = "id")
+    private Attachment attachment;
 }
