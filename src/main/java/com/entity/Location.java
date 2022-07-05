@@ -10,9 +10,9 @@ import javax.persistence.*;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "id")
     private Long id;
 
-    @Column
-    private String name;
+    @Column(name = "location_name")
+    private String locationName;
 }
