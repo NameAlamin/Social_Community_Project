@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/location")
 public class LocationController {
@@ -31,5 +33,12 @@ public class LocationController {
         locationDao.insert(location);
         model.addAttribute("location",location);
         return "location/show";
+    }
+
+    @GetMapping("/list")
+    public String locationList(Model model){
+        List<Location> locationList = locationDao.getAll();
+        model.addAttribute("locationList",locationList);
+        return "location/list";
     }
 }
