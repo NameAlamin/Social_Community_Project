@@ -17,7 +17,7 @@
                            <th class="th">Name</th>
                            <th class="th">Email</th>
                            <th class="th">Password</th>
-<%--                           <th class="th">Location</th>--%>
+                           <th class="th">Location</th>
                            <th class="th">Update</th>
                            <th class="th">Delete</th>
                        </tr>
@@ -31,6 +31,7 @@
                                <td class="td">${user.getName()}</td>
                                <td class="td">${user.getEmail()}</td>
                                <td class="td">${user.getPassword()}</td>
+                               <td class="td">${user.getLocation().getLocationName()}</td>
                                <td><a class="btn btn-success" href="/user/update/${user.getId()}">Update</a></td>
                                <td><a class="btn btn-danger" href="/user/delete/${user.getId()}">Delete</a></td>
                            </tr>
