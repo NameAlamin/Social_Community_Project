@@ -7,8 +7,9 @@
 </head>
 <body>
     <div class="container">
-       <div class="row">
+       <div class="row mt-1">
            <div class="col-sm-12 col-md-9 col-lg-12">
+               <a class="btn btn-success mt-4 mb-2 float-right" href="${pageContext.request.contextPath}/user/create">Add User</a>
                <table class="table table-dark table-striped table-bordered">
 
                    <thead class="thead">
@@ -24,7 +25,7 @@
                    </thead>
 
                    <tbody class="tbody">
-                       <h4>Users(${userList.size()})</h4>
+                       <h4 class="mt-4">Users(${userList.size()})</h4>
                        <c:forEach var="user" items="${userList}">
                            <tr>
                                <td class="td">${user.getId()}</td>
@@ -32,7 +33,7 @@
                                <td class="td">${user.getEmail()}</td>
                                <td class="td">${user.getPassword()}</td>
                                <td class="td">${user.getLocation().getLocationName()}</td>
-                               <td><a class="btn btn-success" href="/user/update/${user.getId()}">Update</a></td>
+                               <td><a class="btn btn-primary" href="/user/update/${user.getId()}">Update</a></td>
                                <td><a class="btn btn-danger" href="/user/delete/${user.getId()}">Delete</a></td>
                            </tr>
                        </c:forEach>
