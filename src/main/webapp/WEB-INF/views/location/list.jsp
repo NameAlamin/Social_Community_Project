@@ -9,6 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 cl-md-9 col-sm-12">
+                <a class="btn btn-success mt-4 mb-2 float-right" href="${pageContext.request.contextPath}/location/create">Add Location</a>
                 <table class="table table-bordered table-dark">
                     <thead class="thead">
                     <th class="th">Id</th>
@@ -17,7 +18,7 @@
                     <th class="th">Delete</th>
                     </thead>
                     <tbody class="tbody">
-                    <h3>Users(${locationList.size()})</h3>
+                    <h4 class="mt-4">Location(${locationList.size()})</h4>
                     <c:forEach var="location" items="${locationList}">
                         <tr>
                             <td>${location.getId()}</td>
