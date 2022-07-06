@@ -50,4 +50,11 @@ public class UserController {
         model.addAttribute("user",user);
         return "user/show";
     }
+
+    @GetMapping("/list")
+    public String showUserList(Model model){
+        List<User> userList = userDao.getAll();
+        model.addAttribute("userList",userList);
+        return "user/list";
+    }
 }
