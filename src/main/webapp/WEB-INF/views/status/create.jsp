@@ -10,7 +10,7 @@
     <div class="row mt-1">
         <div class="col-md-9">
             <br><br>
-            <form:form action="${pageContext.request.contextPath}/status/store" method="post" modelAttribute="statusDTO">
+            <form:form action="${pageContext.request.contextPath}/status/store" method="post" modelAttribute="statusDTO" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="font-weight-bolder" for="title">Title</label>
                     <form:input path="title" cssClass="form-control"/>
