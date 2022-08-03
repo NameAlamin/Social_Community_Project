@@ -31,6 +31,7 @@
                     <form:options items="${privacyList}"/>
                 </form:select>
                 <br>
+                <input type="file" name="image" multiple="multiple" accept="image/*"/>
                 <button type="submit" class="btn btn-danger mt-4">Create</button>
             </form:form>
         </div>

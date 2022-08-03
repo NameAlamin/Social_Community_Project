@@ -18,6 +18,7 @@
                         <th class="th">Description</th>
                         <th class="th">Privacy</th>
                         <th class="th">Location</th>
+                        <th class="th">image</th>
                         <th class="th">Update</th>
                         <th class="th">Delete</th>
                     </tr>
@@ -31,6 +32,11 @@
                             <td class="td">${status.getDescription()}</td>
                             <td class="td">${status.getPrivacy()}</td>
                             <td class="td">${status.getLocation().getLocationName()}</td>
+
+                            <td><c:forEach var="image" items="${status.getStatusAttachmentList()}">
+                                <img src="/image/${image.getAttachmentPath()}"  height="50px" width="50px"  style="object-fit: cover" class="img-fluid border border-danger"/>
+                            </c:forEach></td>
+
                             <td><a class="btn btn-primary" href="/status/update/${status.getId()}">Update</a></td>
                             <td><a class="btn btn-danger" href="/status/delete/${status.getId()}">Delete</a></td>
                         </tr>
