@@ -139,37 +139,37 @@
 
             <ul class="nav flex-column bg-white mb-0">
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/user/create" class="nav-link text-dark bg-light">
+                    <a href="${pageContext.request.contextPath}/user/create" target="_blank" class="nav-link text-dark bg-light">
                         <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                         create user
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/status/create" class="nav-link text-dark">
+                    <a href="${pageContext.request.contextPath}/status/create" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
                         create status
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/location/create" class="nav-link text-dark">
+                    <a href="${pageContext.request.contextPath}/location/create" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
                         create location
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/user/list" class="nav-link text-dark">
+                    <a href="${pageContext.request.contextPath}/user/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
                         user table
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/status/list" class="nav-link text-dark">
+                    <a href="${pageContext.request.contextPath}/status/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
                         status table
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/location/list" class="nav-link text-dark">
+                    <a href="${pageContext.request.contextPath}/location/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
                         location table
                     </a>
@@ -250,6 +250,8 @@
             <!-- End vertical navbar -->
         </div>
         <!-- end right side bar  -->
+    </div>
+</div>
 </body>
 </html>
 

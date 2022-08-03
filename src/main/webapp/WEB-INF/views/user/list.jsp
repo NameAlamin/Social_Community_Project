@@ -19,6 +19,7 @@
                            <th class="th">Email</th>
                            <th class="th">Password</th>
                            <th class="th">Location</th>
+                           <th class="th">image</th>
                            <th class="th">Update</th>
                            <th class="th">Delete</th>
                        </tr>
@@ -33,6 +34,8 @@
                                <td class="td">${user.getEmail()}</td>
                                <td class="td">${user.getPassword()}</td>
                                <td class="td">${user.getLocation().getLocationName()}</td>
+<%--                               <td class="td">${user.getAttachment().getAttachmentPath()}</td>--%>
+                               <td class="td"><img src="/user/${user.getAttachment().getAttachmentPath()}" alt="***" height="50px" width="50px" style="object-fit: cover"/></td>
                                <td><a class="btn btn-primary" href="/user/update/${user.getId()}">Update</a></td>
                                <td><a class="btn btn-danger" href="/user/delete/${user.getId()}">Delete</a></td>
                            </tr>

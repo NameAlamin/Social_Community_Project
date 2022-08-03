@@ -17,7 +17,7 @@
       <div class="row">
           <div class="col-lg-9 col-md-6 col-sm-12">
               <%--@elvariable id="userDTO" type="com.dto.UserDTO"--%>
-              <form:form action="${pageContext.request.contextPath}/user/store" method="post" modelAttribute="userDTO" >
+              <form:form action="${pageContext.request.contextPath}/user/store" method="post" modelAttribute="userDTO" enctype="multipart/form-data" >
                   <div class="form-group">
                       <label class="font-weight-bolder" for="name">Name</label>
                       <form:input type="text" cssClass="form-control" id="name" placeholder="Name" path="name"/>
@@ -42,6 +42,9 @@
                           <form:options items="${locationList}"/>
                       </form:select>
                   </div>
+
+                  <input type="file" name="image" accept="image/*" />
+
                   <br>
 
                   <button type="submit" class="btn btn-warning mt-4">Create</button>

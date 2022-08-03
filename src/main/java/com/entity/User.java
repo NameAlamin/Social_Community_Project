@@ -26,7 +26,7 @@ public class User {
     @JoinColumn(name = "location_id",referencedColumnName = "id")
     private Location location;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "attachment_id",referencedColumnName = "id")
     private Attachment attachment;
 }
