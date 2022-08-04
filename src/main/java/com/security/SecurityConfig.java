@@ -33,9 +33,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests((authz) -> authz.anyRequest()
-                        .authenticated())
-                .httpBasic(Customizer.withDefaults());
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin(form -> form
+                        .loginPage("/showCustomLoginPage") //controller getmepping url
+                        .permitAll()
+                        .usernameParameter("username")
+                        .passwordParameter("password")
+                        .loginProcessingUrl("/authenticateTheUser") //jsp page hit url
+                        .permitAll()
+                )
+                .logout().permitAll();
+
+
         return http.build();
     }
 
