@@ -33,4 +33,20 @@ public class UserDao {
         List<User> userList = query.list();
         return userList;
     }
+
+    public User findByUsername(String username){
+        Session session = sessionFactory.getCurrentSession();
+        User user = null;
+        try{
+            String hql = "FROM User WHERE name= :name";
+            Query query = session.createQuery(hql, User.class).setParameter("name",username);
+            user = (User) query.getSingleResult();
+        }catch (Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        session.flush();
+        return user;
+    }
+
 }
