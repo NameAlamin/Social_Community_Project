@@ -50,6 +50,7 @@ public class UserController {
         model.addAttribute("locationList",locationList);
         model.addAttribute("userDTO",userDTO);
         model.addAttribute("roleList",roleList);
+
         return "user/create";
     }
 
@@ -65,6 +66,7 @@ public class UserController {
         user.setEmail(userDTO.getEmail());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         user.setLocation(location);
+        user.setRole(Role.valueOf(userDTO.getRole()));
         user.setAttachment(attachment);
         userDao.insert(user);
         model.addAttribute("user",user);

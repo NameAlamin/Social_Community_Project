@@ -34,7 +34,7 @@
                             <td class="td">${status.getLocation().getLocationName()}</td>
 
                             <td><c:forEach var="image" items="${status.getStatusAttachmentList()}">
-                                <img src="/image/${image.getAttachmentPath()}" alt="***"  height="50px" width="50px"  style="object-fit: cover" class="img-fluid"/>
+                                <img src="/images/${image.getAttachmentPath()}" alt="***"  height="50px" width="50px"  style="object-fit: cover" class="img-fluid"/>
                             </c:forEach></td>
 
                             <td><a class="btn btn-primary" href="/status/update/${status.getId()}">Update</a></td>

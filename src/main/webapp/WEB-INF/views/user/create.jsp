@@ -45,7 +45,7 @@
 
                   <div class="form-group">
                       <form:select path="role">
-                          <form:option value="Select Location" selected="true" disabled="true"/>
+                          <form:option value="Select Role" selected="true" disabled="true"/>
                           <form:options items="${roleList}"/>
                       </form:select>
                   </div>
