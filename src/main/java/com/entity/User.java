@@ -1,5 +1,6 @@
 package com.entity;
 
+import com.enums.Role;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,6 +22,10 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id",referencedColumnName = "id")

@@ -8,6 +8,7 @@ import com.dto.UserDTO;
 import com.entity.Attachment;
 import com.entity.Location;
 import com.entity.User;
+import com.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 @RequestMapping("/user")
@@ -34,8 +37,14 @@ public class UserController {
         for (Location location:locations) {
             locationList.add(location.getLocationName());
         }
+
+        List<String> roleList = Stream.of(Role.values())
+                        .map(Enum::name).collect(Collectors.toList());
+
+
         model.addAttribute("locationList",locationList);
         model.addAttribute("userDTO",userDTO);
+        model.addAttribute("roleList",roleList);
         return "user/create";
     }
 

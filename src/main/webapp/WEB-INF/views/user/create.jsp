@@ -43,6 +43,13 @@
                       </form:select>
                   </div>
 
+                  <div class="form-group">
+                      <form:select path="role">
+                          <form:option value="Select Location" selected="true" disabled="true"/>
+                          <form:options items="${roleList}"/>
+                      </form:select>
+                  </div>
+
                   <input type="file" name="image" accept="image/*" />
 
                   <br>
