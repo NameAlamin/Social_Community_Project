@@ -10,6 +10,7 @@ import com.entity.Location;
 import com.entity.User;
 import com.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,10 @@ import java.util.stream.Stream;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Autowired
     private LocationDao locationDao;
 
@@ -58,7 +63,7 @@ public class UserController {
         User user = new User();
         user.setName(userDTO.getName());
         user.setEmail(userDTO.getEmail());
-        user.setPassword((userDTO.getPassword()));
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         user.setLocation(location);
         user.setAttachment(attachment);
         userDao.insert(user);
