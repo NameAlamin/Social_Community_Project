@@ -34,8 +34,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .anyRequest()
-                .authenticated()
+                .antMatchers("/user/create","/user/list","/location/create").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .formLogin(form -> form
                         .loginPage("/showCustomLoginPage") //controller getmepping url
