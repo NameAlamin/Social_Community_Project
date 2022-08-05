@@ -1,4 +1,5 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -258,6 +259,13 @@
                             Ads Manager
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <form:form action="${pageContext.request.contextPath}/logout" method="post">
+                            <input type="submit" value="Log Out" class="btn btn-outline-danger rounded m-5"/>
+                        </form:form>
+                    </li>
+
                 </ul>
 
             </div>

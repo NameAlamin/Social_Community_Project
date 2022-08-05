@@ -45,8 +45,8 @@ public class SecurityConfig {
                         .loginProcessingUrl("/authenticateTheUser") //jsp page hit url
                         .permitAll()
                 )
-                .logout().permitAll();
-
+                .logout()
+                .permitAll();
 
         return http.build();
     }
