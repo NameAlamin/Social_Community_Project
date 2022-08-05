@@ -34,6 +34,11 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
+    @GetMapping("/profile")
+    public String profile(Model model){
+        return "user/profile";
+    }
+
     @GetMapping("/create")
     public String showUser(Model model){
         UserDTO userDTO = new UserDTO();

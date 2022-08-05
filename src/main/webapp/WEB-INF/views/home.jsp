@@ -142,6 +142,15 @@
 
             <ul class="nav flex-column bg-white mb-0">
 
+                <security:authorize access="hasRole('USER')">
+                <li class="nav-item">
+                    <a href="${pageContext.request.contextPath}/user/profile" target="_blank" class="nav-link text-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        your profile
+                    </a>
+                </li>
+                </security:authorize>
+
                 <security:authorize access="hasRole('ADMIN')">
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/user/create" target="_blank" class="nav-link text-dark bg-light">
