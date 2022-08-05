@@ -1,3 +1,5 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,36 +140,48 @@
             </p>
 
             <ul class="nav flex-column bg-white mb-0">
+
+                <security:authorize access="hasRole('ADMIN')">
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/user/create" target="_blank" class="nav-link text-dark bg-light">
                         <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                         create user
                     </a>
                 </li>
+                </security:authorize>
+
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/status/create" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
                         create status
                     </a>
                 </li>
+
+                <security:authorize access="hasRole('ADMIN')">
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/location/create" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
                         create location
                     </a>
                 </li>
+                </security:authorize>
+
+                <security:authorize access="hasRole('ADMIN')">
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/user/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
                         user table
                     </a>
                 </li>
+                </security:authorize>
+
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/status/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
                         status table
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="${pageContext.request.contextPath}/location/list" target="_blank" class="nav-link text-dark">
                         <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
